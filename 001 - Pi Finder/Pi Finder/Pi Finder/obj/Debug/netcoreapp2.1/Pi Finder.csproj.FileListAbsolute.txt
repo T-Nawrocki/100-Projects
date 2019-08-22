@@ -1,0 +1,11 @@
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\bin\Debug\netcoreapp2.1\Pi Finder.deps.json
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\bin\Debug\netcoreapp2.1\Pi Finder.runtimeconfig.json
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\bin\Debug\netcoreapp2.1\Pi Finder.runtimeconfig.dev.json
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\bin\Debug\netcoreapp2.1\Pi Finder.dll
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\bin\Debug\netcoreapp2.1\Pi Finder.pdb
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\obj\Debug\netcoreapp2.1\Pi Finder.csprojAssemblyReference.cache
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\obj\Debug\netcoreapp2.1\Pi Finder.csproj.CoreCompileInputs.cache
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\obj\Debug\netcoreapp2.1\Pi Finder.AssemblyInfoInputs.cache
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\obj\Debug\netcoreapp2.1\Pi Finder.AssemblyInfo.cs
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\obj\Debug\netcoreapp2.1\Pi Finder.dll
+U:\repos\gh\100-Projects\001 - Pi Finder\Pi Finder\Pi Finder\obj\Debug\netcoreapp2.1\Pi Finder.pdb
