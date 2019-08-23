@@ -1,0 +1,45 @@
+﻿<Window x:Class="_004___Prime_Factors.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpftool="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Prime Factors"
+        Height="400"
+        Width="300">
+    <Grid>
+        <TextBlock
+            Name="InstructionText"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Margin="10"
+            FontSize="14"
+            TextWrapping="Wrap"
+            Text="Enter a number and press enter to see the prime factors of that number:"/>
+        <wpftool:IntegerUpDown
+            Name="InputBox"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Height="30"
+            Width="250"
+            Margin="10,50,10,10"
+            FontSize="16"
+            Minimum="2"
+            KeyDown="InputBox_KeyDown"
+            />
+        <ScrollViewer
+            Name="OutputScroll"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Margin="10,90,10,10"
+            Height="260"
+            Width="250"
+            VerticalScrollBarVisibility="Auto">
+        <TextBlock
+            Name="OutputText"
+            TextWrapping="Wrap"
+            FontSize="14"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
