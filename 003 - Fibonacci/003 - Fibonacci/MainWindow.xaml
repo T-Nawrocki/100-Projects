@@ -46,13 +46,18 @@
                 FontSize="13"
                 Click="GenerateNPlacesButton_Click"
                 />
-        <TextBlock Name="OutputText"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Center"
-                   Margin="10,190,10,10"
+        <ScrollViewer
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Margin="10,190,10,10"
+            Width="270"
+            Height="250"
+            >
+            <TextBlock Name="OutputText"
                    FontSize="14"
                    TextWrapping="Wrap"
-                   TextAlignment="Justify"
+                   TextAlignment="Left"
                    />
+        </ScrollViewer>
     </Grid>
 </Window>
