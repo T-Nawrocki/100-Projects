@@ -1,0 +1,144 @@
+﻿<Window x:Class="_007___Mortgage_Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_007___Mortgage_Calculator"
+        xmlns:wpftool="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Mortgage Calculator" 
+        Height="450" 
+        Width="500"
+        ResizeMode="CanResize">
+    <Grid
+        Margin="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="1.3*"/>
+            </Grid.RowDefinitions>
+            <Grid
+                Grid.Row="0"
+                >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="0.05*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.05*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="0.05*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                    Name="TotalDebtLabel"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Content="Total Debt"
+                    FontSize="16"
+                    FontWeight="Bold"/>
+                <wpftool:IntegerUpDown
+                    Name="TotalDebtInput"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Height="50"
+                    Minimum="1"
+                    Maximum="2147483647"
+                    FormatString="C"
+                    FontSize="16"
+                    Watermark="£0.00"/>
+                <Label
+                    Name="InterestPeriodLabel"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Content="Interest Period"
+                    FontSize="16"
+                    FontWeight="Bold"/>
+                <ComboBox
+                    Name="InterestPeriodSelect"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    FontSize="16"
+                    HorizontalContentAlignment="Right"
+                    VerticalContentAlignment="Center">
+                    <ComboBoxItem Name="InterestDaily">Daily</ComboBoxItem>
+                    <ComboBoxItem Name="InterestWeekly">Weekly</ComboBoxItem>
+                    <ComboBoxItem Name="InterestMonthly">Monthly</ComboBoxItem>
+                    <ComboBoxItem Name="InterestAnnual">Annual</ComboBoxItem>
+                    <ComboBoxItem Name="InterestFixed">Fixed</ComboBoxItem>
+                </ComboBox>
+                <Label
+                    Name="InterestLabel"
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    Content="Interest Rate"
+                    FontSize="16"
+                    FontWeight="Bold"/>
+                <wpftool:DoubleUpDown
+                    Name="InterestInput"
+                    Grid.Row="1"
+                    Grid.Column="4"
+                    FontSize="16"
+                    FormatString="P"
+                    Increment="0.0001"
+                    Watermark="0.00%"/>
+                <Label
+                    Name="TermLabel"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Content="Term (Years)"
+                    FontSize="16"
+                    FontWeight="Bold"/>
+                <wpftool:IntegerUpDown
+                    Name="TermInput"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Height="50"
+                    Minimum="1"
+                    Maximum="2147483647"
+                    FontSize="16"
+                    Watermark="0"/>
+                <Label
+                    Name="PaymentPeriodLabel"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Content="Payment Period"
+                    FontSize="16"
+                    FontWeight="Bold"/>
+                <ComboBox
+                    Name="PaymentPeriodSelect"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    FontSize="16"
+                    HorizontalContentAlignment="Right"
+                    VerticalContentAlignment="Center">
+                    <ComboBoxItem Name="PayDaily">Daily</ComboBoxItem>
+                    <ComboBoxItem Name="PayWeekly">Weekly</ComboBoxItem>
+                    <ComboBoxItem Name="PayMonthly">Monthly</ComboBoxItem>
+                    <ComboBoxItem Name="PayAnnual">Annual</ComboBoxItem>
+                </ComboBox>
+                <Button
+                    Name="CalculateButton"
+                    Grid.Row="4"
+                    Grid.Column="4"
+                    Click="CalculateButton_Click">
+                    <TextBlock 
+                        Text="Calculate Mortgage Payments" 
+                        TextWrapping="Wrap"
+                        FontSize="15"
+                        FontWeight="Bold"
+                        TextAlignment="Center"/>
+                </Button>
+            </Grid>
+            <TextBlock
+                Name="OutputText"
+                Grid.Row="2"
+                FontSize="16"/>
+        </Grid>
+    </Grid>
+</Window>
