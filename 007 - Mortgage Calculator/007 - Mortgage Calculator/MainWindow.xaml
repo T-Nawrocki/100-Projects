@@ -138,7 +138,8 @@
             <TextBlock
                 Name="OutputText"
                 Grid.Row="2"
-                FontSize="16"/>
+                FontSize="16"
+                TextWrapping="Wrap"/>
         </Grid>
     </Grid>
 </Window>

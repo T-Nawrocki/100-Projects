@@ -66,20 +66,20 @@ namespace _007___Mortgage_Calculator
                 double PaymentAmount = TotalDebt / NumberOfPaymentPeriods;
 
                 // sets output text
-                OutputText.Text = String.Format("To pay back a £{0:n} mortgage over {1:n0} year", InitialDebt, Term);
-                if (Term > 1)
+                OutputText.Text = String.Format("To pay back a £{0:n} mortgage over {1:n0} year", InitialDebt, TermInput.Value);
+                if (TermInput.Value > 1)
                     OutputText.Text += "s";
                 OutputText.Text += ", with a";
                 if (InterestPeriod == 0)
                     OutputText.Text += String.Format(" fixed interest rate of {0:P}, ", InterestRate);
                 else
                     OutputText.Text += String.Format(
-                        "n interest rate of {0:P}, compounding {1}, ", 
-                        InterestRate, 
+                        "n interest rate of {0:P}, compounding {1}, ",
+                        InterestRate,
                         InterestPeriodWords.ToLower());
                 OutputText.Text += String.Format(
                     ", and paying on a {0} basis, will require {1:n0} payments of £{2:n}.",
-                    PaymentPeriodWords.ToLower(), 
+                    PaymentPeriodWords.ToLower(),
                     NumberOfPaymentPeriods,
                     PaymentAmount);
             }
@@ -114,7 +114,7 @@ namespace _007___Mortgage_Calculator
                 return true;
             }
             else
-                return true;
+                return false;
         }
 
         private double AssignInterestPeriod()
