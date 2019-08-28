@@ -22,11 +22,11 @@
                 Grid.Row="0"
                 >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="2*"/>
-                    <RowDefinition Height="0.05*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="27*"/>
+                    <RowDefinition Height="55*"/>
+                    <RowDefinition Height="0*"/>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="51*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
@@ -46,12 +46,11 @@
                     Name="TotalDebtInput"
                     Grid.Row="1"
                     Grid.Column="0"
-                    Height="50"
                     Minimum="1"
                     Maximum="2147483647"
                     FormatString="C"
                     FontSize="16"
-                    Watermark="£0.00"/>
+                    Watermark="£0.00" Margin="0,3,0,2"/>
                 <Label
                     Name="InterestPeriodLabel"
                     Grid.Row="0"
@@ -69,7 +68,7 @@
                     <ComboBoxItem Name="InterestDaily">Daily</ComboBoxItem>
                     <ComboBoxItem Name="InterestWeekly">Weekly</ComboBoxItem>
                     <ComboBoxItem Name="InterestMonthly">Monthly</ComboBoxItem>
-                    <ComboBoxItem Name="InterestAnnual">Annual</ComboBoxItem>
+                    <ComboBoxItem Name="InterestYearly">Yearly</ComboBoxItem>
                     <ComboBoxItem Name="InterestFixed">Fixed</ComboBoxItem>
                 </ComboBox>
                 <Label
@@ -98,11 +97,10 @@
                     Name="TermInput"
                     Grid.Row="4"
                     Grid.Column="0"
-                    Height="50"
                     Minimum="1"
                     Maximum="2147483647"
                     FontSize="16"
-                    Watermark="0"/>
+                    Watermark="0" Margin="0,1,0,0"/>
                 <Label
                     Name="PaymentPeriodLabel"
                     Grid.Row="3"
@@ -120,7 +118,7 @@
                     <ComboBoxItem Name="PayDaily">Daily</ComboBoxItem>
                     <ComboBoxItem Name="PayWeekly">Weekly</ComboBoxItem>
                     <ComboBoxItem Name="PayMonthly">Monthly</ComboBoxItem>
-                    <ComboBoxItem Name="PayAnnual">Annual</ComboBoxItem>
+                    <ComboBoxItem Name="PayYearly">Yearly</ComboBoxItem>
                 </ComboBox>
                 <Button
                     Name="CalculateButton"

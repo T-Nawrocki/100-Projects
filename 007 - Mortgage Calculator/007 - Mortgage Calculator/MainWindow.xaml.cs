@@ -36,8 +36,8 @@ namespace _007___Mortgage_Calculator
                 double InterestRate = Convert.ToSingle(InterestInput.Value);
 
                 // Using substring to remove Interest/Pay from start of Interest/Payment Period, leaving only "Daily" etc
-                string InterestPeriodWords = Convert.ToString(InterestPeriodSelect.SelectedItem).Substring(8);
-                string PaymentPeriodWords = Convert.ToString(PaymentPeriodSelect.SelectedItem).Substring(3);
+                string InterestPeriodWords = ((ComboBoxItem)InterestPeriodSelect.SelectedItem).Name.Substring(8);
+                string PaymentPeriodWords = ((ComboBoxItem)PaymentPeriodSelect.SelectedItem).Name.Substring(3);
 
                 // converts interest and payment period selects into an equivalent value in days
                 double InterestPeriod = AssignInterestPeriod();
@@ -78,10 +78,11 @@ namespace _007___Mortgage_Calculator
                         InterestRate,
                         InterestPeriodWords.ToLower());
                 OutputText.Text += String.Format(
-                    ", and paying on a {0} basis, will require {1:n0} payments of £{2:n}.",
+                    "and paying on a {0} basis, will require {1:n0} payments of £{2:n}, for a total of £{3:n}.",
                     PaymentPeriodWords.ToLower(),
                     NumberOfPaymentPeriods,
-                    PaymentAmount);
+                    PaymentAmount,
+                    TotalDebt);
             }
         }
 
@@ -125,7 +126,7 @@ namespace _007___Mortgage_Calculator
                 return 7;
             else if (InterestPeriodSelect.SelectedItem == InterestMonthly)
                 return 365.25 / 12;
-            else if (InterestPeriodSelect.SelectedItem == InterestAnnual)
+            else if (InterestPeriodSelect.SelectedItem == InterestYearly)
                 return 365.25;
             else
                 return 0; // used for fixed interest, which doesn't rely on period being set
