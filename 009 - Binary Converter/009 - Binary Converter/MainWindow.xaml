@@ -5,8 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_009___Binary_Converter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" 
+        Height="450" 
+        Width="800">
+    <Grid Margin="10px">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Name="Column0Grid"
+              Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10px"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Name="DecimalTitle"
+                       Grid.Row="0"
+                       Text="Decimal"
+                       FontSize="48"
+                       FontWeight="Light"
+                       TextAlignment="Right"
+                       TextDecorations="Underline"/>
+            <TextBox Name="DecimalBox"
+                     Grid.Row="2"
+                     TextWrapping="Wrap"
+                     FontSize="28"
+                     PreviewTextInput="DecimalBox_PreviewTextInput"
+                     DataObject.Pasting="DecimalBox_Pasting"/>
+        </Grid>
+
+        <Grid Name="Column1Grid"
+             Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10px"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10px"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <Button Name="ConvertButton"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Content="&lt;-- Convert --&gt;"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Click="ConvertButton_Click"
+                    />
+
+        </Grid>
+
+        <Grid Name="Column2Grid"
+              Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Name="BinaryTitle"
+                       Grid.Row="0"
+                       Text="Binary"
+                       FontSize="48"
+                       FontWeight="Light"
+                       TextAlignment="Left"
+                       TextDecorations="Underline"/>
+            <TextBox Name="BinaryBox"
+                     Grid.Row="2"
+                     TextWrapping="Wrap"
+                     FontSize="28"
+                     PreviewTextInput="BinaryBox_PreviewTextInput"
+                     DataObject.Pasting="BinaryBox_Pasting"/>
+
+        </Grid>
         
     </Grid>
 </Window>
