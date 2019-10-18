@@ -47,13 +47,24 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*"/>
+                <RowDefinition Height="10px"/>
                 <RowDefinition Height="1*"/>
+                <RowDefinition Height="10px"/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
 
+            <TextBlock Name="ErrorText"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       TextWrapping="Wrap"
+                       FontSize="16"
+                       FontStyle="Italic"
+                       VerticalAlignment="Bottom"
+                       Foreground="Red"/>
+
             <Button Name="ConvertButton"
                     Grid.Column="1"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Content="&lt;-- Convert --&gt;"
                     FontSize="16"
                     FontWeight="Bold"

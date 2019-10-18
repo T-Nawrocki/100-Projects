@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace _009___Binary_Converter
 {
@@ -21,6 +22,18 @@ namespace _009___Binary_Converter
     /// </summary>
     public partial class MainWindow : Window
     {
+        // used long because conversion to binary string is easier for that than ulong
+        // however, it'd be really good to be able to put in an arbitrarily large number and get the correct output
+        // put that as a stretch goal, and if I can't achieve it just put an error message for when the input value is too great
+
+        // input variables
+        private long? DecimalInput;
+        private long? BinaryInput;
+        // value variables (used to compare against input and to calculate output)
+        private long DecimalValue;
+        private long BinaryValue;
+        private string ConversionDirection; 
+
 
         public MainWindow()
         {
@@ -29,15 +42,59 @@ namespace _009___Binary_Converter
 
         private void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
-            //declare two container variables
-            // if one input value != container
-                // set container to input value
-                // convert input value
-                // set other container to output value
-            // if both input value != container
-                // throw error telling them to convert one at a time, please delete one.
-            // if no input value
-                // throw error telling them to input a value
+            ErrorText.Text = ""; // clear any previous error messages
+
+            ReceiveInput(); // assigns input value to input variables
+
+            DecideConversionDirection(); // determines direction of conversion (or error code if invalid input)
+            AssignCalculationValues(); // 
+
+            if (ConversionDirection == "NoInput") // Error Message for no input on either
+                ErrorText.Text = "*** There is no value to convert. Please enter a number in one of the text boxes.";
+            else if (ConversionDirection == "DoubleInput") // Error message for double input
+                ErrorText.Text = "*** Cannot convert two values at once. Please convert one at a time";
+            else
+            {
+                if (ConversionDirection == "DecToBin")
+                    ;
+                else
+                    ;
+            }
+         }
+
+        private void ReceiveInput()
+        {
+            DecimalInput = Int64.TryParse(DecimalBox.Text, out long decResult) ? (long?)decResult : null;
+            BinaryInput = Int64.TryParse(BinaryBox.Text, out long binResult) ? (long?)binResult : null;
+
+            Debug.WriteLine("The following inputs were received:");
+            Debug.WriteLine(String.Format("DecimalInput: {0}", DecimalInput));
+            Debug.WriteLine(String.Format("BinaryInput: {0}", BinaryInput));
+        }
+
+        private void DecideConversionDirection() // sets ConversionDirection based on input. In case of invalid input, returns error codes.
+        {
+            ConversionDirection = null;
+            if (DecimalInput == null && BinaryInput == null) // no input
+                ConversionDirection = "NoInput";
+            else if (DecimalInput != null && BinaryInput != null) // double input
+                ConversionDirection = "DoubleInput";
+            else if (DecimalInput != null) // decimal input
+                ConversionDirection = "DecToBin";
+            else if (BinaryInput != null) // binary input
+                ConversionDirection = "BinToDec";
+
+            Debug.WriteLine(String.Format("At DecideConversionDirection, the assigned value was: {0}", ConversionDirection));
+        }
+
+        private void AssignCalculationValues() // checks which input has been provided, then assigns that input to appropriate Value variable
+        {
+            DecimalValue = (Convert.ToInt64(DecimalInput) != DecimalValue) ? Convert.ToInt64(DecimalInput) : DecimalValue;
+            BinaryValue = (Convert.ToInt64(BinaryInput) != BinaryValue) ? Convert.ToInt64(BinaryInput) : BinaryValue;
+
+            Debug.WriteLine("At AssignAnswerValue, the following values were assigned:");
+            Debug.WriteLine(String.Format("DecimalValue: {0}", DecimalValue));
+            Debug.WriteLine(String.Format("BinaryValue: {0}", BinaryValue));
         }
 
         private void DecimalBox_PreviewTextInput(object sender, TextCompositionEventArgs e) // only allows integer input to decimal box
