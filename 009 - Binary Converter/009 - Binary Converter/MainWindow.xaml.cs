@@ -56,9 +56,16 @@ namespace _009___Binary_Converter
             else
             {
                 if (ConversionDirection == "DecToBin")
-                    ;
+                {
+                    string BinaryOutput = Convert.ToString(DecimalValue, 2);
+                    BinaryBox.Text = BinaryOutput;
+                }
                 else
-                    ;
+                {
+                    long output = Convert.ToInt64(Convert.ToString(BinaryValue), 2);
+                    DecimalBox.Text = Convert.ToString(output);
+                }
+
             }
          }
 
