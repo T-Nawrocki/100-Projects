@@ -5,8 +5,175 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_010___Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Basic Calculator"
+        Height="500"
+        Width="350"
+        ResizeMode="CanMinimize"
+        Background="SlateGray">
+    <Grid Name="MainGrid"
+          Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Name="IODisplay"
+                 Grid.Row="0"
+                 TextAlignment="Right"
+                 VerticalContentAlignment="Bottom"
+                 FontSize="32"
+                 Text="10001231"/>
         
+        <Label Name ="CurrentSumDisplay"
+               Grid.Row="0"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Top"
+               Foreground="Gray"
+               Content="10101010"/>
+
+        <Grid Name="ButtonGrid"
+              Grid.Row="2">
+            <Grid.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="1"/>
+                    <Setter Property="FontSize" Value="18"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="Background" Value="LightGray"/>
+                    <EventSetter Event="MouseEnter" Handler="Button_MouseEnter"/>
+                    <EventSetter Event="MouseLeave" Handler="Button_MouseLeave"/>
+                    <EventSetter Event="Click" Handler="Button_Click"/>
+                </Style>
+                <Style x:Key="NumberButton"
+                       TargetType="Button"
+                       BasedOn="{StaticResource {x:Type Button}}">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Background" Value="Snow"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Name="PercentButton"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Content="%"/>
+            <Button Name="RootButton"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Content="&#178;&#8730;x"/>
+            <Button Name="SquaredButton"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Content="x&#178;"/>
+            <Button Name="FractionButton"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Content="1/x"/>
+            <Button Name="ClearInputButton"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Content="CE"/>
+            <Button Name="ClearAllButton"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Content="C"/>
+            <Button Name="DeleteButton"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Content="Del"/>
+            <Button Name="DivideButton"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    Content="&#247;"/>
+            <Button Name="SevenButton"
+                    Style="{StaticResource NumberButton}"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Content="7"/>
+            <Button Name="EightButton"
+                    Style="{StaticResource NumberButton}"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Content="8"/>
+            <Button Name="NineButton"
+                    Style="{StaticResource NumberButton}"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Content="9"/>
+            <Button Name="MultiplyButton"
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    Content="&#215;"/>
+            <Button Name="FourButton"
+                    Style="{StaticResource NumberButton}"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Content="4"/>
+            <Button Name="FiveButton"
+                    Style="{StaticResource NumberButton}"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Content="5"/>
+            <Button Name="SixButton"
+                    Style="{StaticResource NumberButton}"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Content="6"/>
+            <Button Name="SubtractButton"
+                    Grid.Row="3"
+                    Grid.Column="3"
+                    Content="–"/>
+            <Button Name="OneButton"
+                    Style="{StaticResource NumberButton}"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Content="1"/>
+            <Button Name="TwoButton"
+                    Style="{StaticResource NumberButton}"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Content="2"/>
+            <Button Name="ThreeButton"
+                    Style="{StaticResource NumberButton}"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Content="3"/>
+            <Button Name="AddButton"
+                    Grid.Row="4"
+                    Grid.Column="3"
+                    Content="+"/>
+            <Button Name="SignButton"
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Content="&#177;"/>
+            <Button Name="ZeroButton"
+                    Style="{StaticResource NumberButton}"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Content="0"/>
+            <Button Name="DecimalButton"
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    Content="."/>
+            <Button Name="EqualsButton"
+                    Grid.Row="5"
+                    Grid.Column="3"
+                    Content="="/>
+        </Grid>
     </Grid>
+
 </Window>
