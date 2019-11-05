@@ -34,8 +34,9 @@
 
         <Grid Name="ButtonGrid"
               Grid.Row="2">
+            
             <Grid.Resources>
-                <Style TargetType="{x:Type Button}">
+                <Style TargetType="Button">
                     <Setter Property="Margin" Value="1"/>
                     <Setter Property="FontSize" Value="18"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -43,15 +44,18 @@
                     <Setter Property="Background" Value="LightGray"/>
                     <EventSetter Event="MouseEnter" Handler="Button_MouseEnter"/>
                     <EventSetter Event="MouseLeave" Handler="Button_MouseLeave"/>
-                    <EventSetter Event="Click" Handler="Button_Click"/>
+                    <EventSetter Event="MouseDown" Handler="Button_MouseDown"/>
+                    <EventSetter Event="MouseUp" Handler="Button_MouseUp"/>
                 </Style>
+                
                 <Style x:Key="NumberButton"
-                       TargetType="Button"
-                       BasedOn="{StaticResource {x:Type Button}}">
+                       BasedOn="{StaticResource Button}"
+                       TargetType="Button">
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="Background" Value="Snow"/>
                 </Style>
             </Grid.Resources>
+            
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>

@@ -35,7 +35,12 @@ namespace _010___Calculator
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Button_MouseUp(object sender, MouseButtonEventArgs e)
         {
 
         }
