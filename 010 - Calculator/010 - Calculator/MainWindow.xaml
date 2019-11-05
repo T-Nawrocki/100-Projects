@@ -23,14 +23,14 @@
                  TextAlignment="Right"
                  VerticalContentAlignment="Bottom"
                  FontSize="32"
-                 Text="10001231"/>
+                 PreviewTextInput="IODisplay_PreviewTextInput"
+                 DataObject.Pasting="IODisplay_Pasting"/>
         
         <Label Name ="CurrentSumDisplay"
                Grid.Row="0"
                HorizontalContentAlignment="Right"
                VerticalContentAlignment="Top"
-               Foreground="Gray"
-               Content="10101010"/>
+               Foreground="Gray"/>
 
         <Grid Name="ButtonGrid"
               Grid.Row="2">
@@ -46,6 +46,7 @@
                     <EventSetter Event="MouseLeave" Handler="Button_MouseLeave"/>
                     <EventSetter Event="MouseDown" Handler="Button_MouseDown"/>
                     <EventSetter Event="MouseUp" Handler="Button_MouseUp"/>
+                    <EventSetter Event="Click" Handler="Button_Click"/>
                 </Style>
                 
                 <Style x:Key="NumberButton"

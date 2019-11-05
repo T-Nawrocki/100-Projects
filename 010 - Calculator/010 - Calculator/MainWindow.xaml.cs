@@ -44,5 +44,20 @@ namespace _010___Calculator
         {
 
         }
+
+        private void IODisplay_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void IODisplay_Pasting(object sender, DataObjectPastingEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
