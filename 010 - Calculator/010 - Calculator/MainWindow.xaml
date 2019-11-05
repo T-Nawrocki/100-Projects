@@ -30,7 +30,8 @@
                Grid.Row="0"
                HorizontalContentAlignment="Right"
                VerticalContentAlignment="Top"
-               Foreground="Gray"/>
+               Foreground="Gray"
+               IsHitTestVisible="False"/>
 
         <Grid Name="ButtonGrid"
               Grid.Row="2">
@@ -50,7 +51,7 @@
                 </Style>
                 
                 <Style x:Key="NumberButton"
-                       BasedOn="{StaticResource Button}"
+                       BasedOn="{StaticResource {x:Type Button}}"
                        TargetType="Button">
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="Background" Value="Snow"/>
