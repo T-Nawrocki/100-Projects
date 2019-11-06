@@ -22,7 +22,7 @@ namespace _010___Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static readonly Regex _inputRegex = new Regex("^[0-9]+$"); // regex contains valid input for IODisplay
+        private static readonly Regex _inputRegex = new Regex(@"^[1-9]\d*(\.\d*[1-9])?$"); // regex contains valid input for IODisplay
 
         public MainWindow()
         {
