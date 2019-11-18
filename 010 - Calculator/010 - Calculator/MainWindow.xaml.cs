@@ -22,7 +22,7 @@ namespace _010___Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static readonly Regex _inputRegex = new Regex(@"^[1-9]\d*(\.\d*[1-9])?$"); // regex contains valid input for IODisplay
+        private static readonly Regex _inputRegex = new Regex(@"^\d+\.?\d*$"); // regex for valid input (any number of digits; up to one .; any number of digits)
 
         public MainWindow()
         {
@@ -52,7 +52,10 @@ namespace _010___Calculator
         private void IODisplay_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             // restricts typed input to valid characters only
-            e.Handled = !_inputRegex.IsMatch(e.Text);
+            if (e.Text != ".")
+                e.Handled = !_inputRegex.IsMatch(e.Text); // for all characters other than ".", check regex to see if valid
+            else
+                e.Handled = IODisplay.Text.Contains("."); // for ".", permit only one
         }
 
         private void IODisplay_Pasting(object sender, DataObjectPastingEventArgs e)
