@@ -74,13 +74,17 @@ namespace _010___Calculator
             // Might make sense to split this into separate handlers for each type of button (maybe one for numberbuttons, and one each for the others)
         }
 
-        // tidies up formatting of input by deleting redundant 0 and . characters
+        // tidies up formatting of input by deleting redundant 0 and . characters and adding a 0 before initial .
         private void CleanUpInput() 
         {
             string input = IODisplay.Text;
-
+          
             if (input.Contains("."))
             {
+                // adds 0 before initial .
+                if (input[0] == '.')
+                    input = "0" + input;
+
                 input = input.TrimEnd('0'); // removes final 0 after a decimal point
 
                 input = input.TrimEnd('.'); // removes final .
