@@ -58,6 +58,11 @@ namespace _010___Calculator
                 e.Handled = IODisplay.Text.Contains("."); // for ".", permit only one
         }
 
+        private void IODisplay_LostFocus(object sender, RoutedEventArgs e)
+        {
+            CleanUpInput(); // run cleanup input method
+        }
+
         private void IODisplay_Pasting(object sender, DataObjectPastingEventArgs e)
         {
             // restricts pasted input to valid characters only
@@ -67,6 +72,26 @@ namespace _010___Calculator
         {
             // master event handler for button clicks. 
             // Might make sense to split this into separate handlers for each type of button (maybe one for numberbuttons, and one each for the others)
+        }
+
+        // tidies up formatting of input by deleting redundant 0 and . characters
+        private void CleanUpInput() 
+        {
+            string input = IODisplay.Text;
+
+            if (input.Contains("."))
+            {
+                input = input.TrimEnd('0'); // removes final 0 after a decimal point
+
+                input = input.TrimEnd('.'); // removes final .
+            }
+
+            // removes initial 0 until length = 1 or the second character is .
+            while (input.Length > 1 && input[0] == '0' && input[1] != '.')
+                input = input.Remove(0, 1);
+
+            IODisplay.Text = input;
+
         }
     }
 }

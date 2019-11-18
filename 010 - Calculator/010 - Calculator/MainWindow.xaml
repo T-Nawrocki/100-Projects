@@ -24,6 +24,7 @@
                  VerticalContentAlignment="Bottom"
                  FontSize="32"
                  PreviewTextInput="IODisplay_PreviewTextInput"
+                 LostFocus="IODisplay_LostFocus"
                  DataObject.Pasting="IODisplay_Pasting"/>
         
         <Label Name ="CurrentSumDisplay"
