@@ -22,32 +22,15 @@ namespace _010___Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static readonly Regex _inputRegex = new Regex(@"^\d+\.?\d*$"); // regex for valid input (any number of digits; up to one .; any number of digits)
 
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_MouseEnter(object sender, MouseEventArgs e)
-        {
-            // change colour to highlight current mouse focus
-        }
+        #region Data Validation
 
-        private void Button_MouseLeave(object sender, MouseEventArgs e)
-        {
-            // return colour to default (depending on style) after mouse focus leaves
-        }
-
-        private void Button_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            // change colour or add border to highlight mouse down
-        }
-
-        private void Button_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            // return colour and border to default (depending on style) after mouse up
-        }
+        private static readonly Regex _inputRegex = new Regex(@"^\d+\.?\d*$"); // regex for valid input (any number of digits; up to one .; any number of digits)
 
         private void IODisplay_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -63,7 +46,7 @@ namespace _010___Calculator
             CleanUpInput(); // run cleanup input method
         }
 
-        private void IODisplay_Pasting(object sender, DataObjectPastingEventArgs e) 
+        private void IODisplay_Pasting(object sender, DataObjectPastingEventArgs e)
         {
             // restricts pasted input to valid characters only
             string input = (String)e.DataObject.GetData(typeof(String)); // gets pasted data and assigns it to string
@@ -75,18 +58,11 @@ namespace _010___Calculator
                 e.CancelCommand();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            // master event handler for button clicks. 
-            // Might make sense to split this into separate handlers for each type of button (maybe one for numberbuttons, and one each for the others)
-        }
-
-        
-        private void CleanUpInput() 
+        private void CleanUpInput()
         {
             // tidies up formatting of input by deleting redundant 0 and . characters and adding a 0 before initial .
             string input = IODisplay.Text;
-          
+
             if (input.Contains("."))
             {
                 // adds 0 before initial .
@@ -105,5 +81,16 @@ namespace _010___Calculator
             IODisplay.Text = input;
 
         }
+
+        #endregion
+
+        #region Button Clicks
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // master event handler for button clicks. 
+            // Might make sense to split this into separate handlers for each type of button (maybe one for numberbuttons, and one each for the others)
+        }
+        #endregion
+
     }
 }

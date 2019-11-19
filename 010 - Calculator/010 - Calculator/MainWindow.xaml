@@ -43,20 +43,40 @@
                     <Setter Property="FontSize" Value="18"/>
                     <Setter Property="VerticalContentAlignment" Value="Center"/>
                     <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    <Setter Property="Background" Value="LightGray"/>
-                    <EventSetter Event="MouseEnter" Handler="Button_MouseEnter"/>
-                    <EventSetter Event="MouseLeave" Handler="Button_MouseLeave"/>
-                    <EventSetter Event="MouseDown" Handler="Button_MouseDown"/>
-                    <EventSetter Event="MouseUp" Handler="Button_MouseUp"/>
+                    <Setter Property="Background" Value="Silver"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
                     <EventSetter Event="Click" Handler="Button_Click"/>
+
+                    <Style.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="False"/>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="Snow"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
                 </Style>
                 
                 <Style x:Key="NumberButton"
                        BasedOn="{StaticResource {x:Type Button}}"
                        TargetType="Button">
                     <Setter Property="FontWeight" Value="Bold"/>
-                    <Setter Property="Background" Value="Snow"/>
+                    <Setter Property="Background" Value="LightGray"/>
                 </Style>
+                
             </Grid.Resources>
             
             <Grid.RowDefinitions>
