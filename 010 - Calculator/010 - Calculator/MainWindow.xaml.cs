@@ -82,15 +82,89 @@ namespace _010___Calculator
 
         }
 
+
+
         #endregion
 
-        #region Button Clicks
-        private void Button_Click(object sender, RoutedEventArgs e)
+        #region Reset Button Event Handlers
+        private void ClearInputButton_Click(object sender, RoutedEventArgs e)
         {
-            // master event handler for button clicks. 
-            // Might make sense to split this into separate handlers for each type of button (maybe one for numberbuttons, and one each for the others)
+
+        }
+
+        private void ClearAllButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
         #endregion
 
+        #region Basic Maths Button Event Handlers
+        private void NumberButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DecimalButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SubtractButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MultiplyButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DivideButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EqualsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region Complex Maths Button Event Handlers
+        private void SignButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PercentButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RootButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SquaredButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FractionButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        #endregion
     }
 }

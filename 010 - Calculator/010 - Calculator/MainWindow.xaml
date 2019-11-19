@@ -54,8 +54,6 @@
                         </Setter.Value>
                     </Setter>
 
-                    <EventSetter Event="Click" Handler="Button_Click"/>
-
                     <Style.Triggers>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -75,6 +73,8 @@
                        TargetType="Button">
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="Background" Value="LightGray"/>
+
+                    <EventSetter Event="Click" Handler="NumberButton_Click"/>
                 </Style>
                 
             </Grid.Resources>
@@ -97,35 +97,43 @@
             <Button Name="PercentButton"
                     Grid.Row="0"
                     Grid.Column="0"
-                    Content="%"/>
+                    Content="%"
+                    Click="PercentButton_Click"/>
             <Button Name="RootButton"
                     Grid.Row="0"
                     Grid.Column="1"
-                    Content="&#178;&#8730;x"/>
+                    Content="&#178;&#8730;x"
+                    Click="RootButton_Click"/>
             <Button Name="SquaredButton"
                     Grid.Row="0"
                     Grid.Column="2"
-                    Content="x&#178;"/>
+                    Content="x&#178;"
+                    Click="SquaredButton_Click"/>
             <Button Name="FractionButton"
                     Grid.Row="0"
                     Grid.Column="3"
-                    Content="1/x"/>
+                    Content="1/x"
+                    Click="FractionButton_Click"/>
             <Button Name="ClearInputButton"
                     Grid.Row="1"
                     Grid.Column="0"
-                    Content="CE"/>
+                    Content="CE"
+                    Click="ClearInputButton_Click"/>
             <Button Name="ClearAllButton"
                     Grid.Row="1"
                     Grid.Column="1"
-                    Content="C"/>
+                    Content="C"
+                    Click="ClearAllButton_Click"/>
             <Button Name="DeleteButton"
                     Grid.Row="1"
                     Grid.Column="2"
-                    Content="Del"/>
+                    Content="Del"
+                    Click="DeleteButton_Click"/>
             <Button Name="DivideButton"
                     Grid.Row="1"
                     Grid.Column="3"
-                    Content="&#247;"/>
+                    Content="&#247;"
+                    Click="DivideButton_Click"/>
             <Button Name="SevenButton"
                     Style="{StaticResource NumberButton}"
                     Grid.Row="2"
@@ -144,7 +152,8 @@
             <Button Name="MultiplyButton"
                     Grid.Row="2"
                     Grid.Column="3"
-                    Content="&#215;"/>
+                    Content="&#215;"
+                    Click="MultiplyButton_Click"/>
             <Button Name="FourButton"
                     Style="{StaticResource NumberButton}"
                     Grid.Row="3"
@@ -163,7 +172,8 @@
             <Button Name="SubtractButton"
                     Grid.Row="3"
                     Grid.Column="3"
-                    Content="–"/>
+                    Content="–"
+                    Click="SubtractButton_Click"/>
             <Button Name="OneButton"
                     Style="{StaticResource NumberButton}"
                     Grid.Row="4"
@@ -182,11 +192,13 @@
             <Button Name="AddButton"
                     Grid.Row="4"
                     Grid.Column="3"
-                    Content="+"/>
+                    Content="+"
+                    Click="AddButton_Click"/>
             <Button Name="SignButton"
                     Grid.Row="5"
                     Grid.Column="0"
-                    Content="&#177;"/>
+                    Content="&#177;"
+                    Click="SignButton_Click"/>
             <Button Name="ZeroButton"
                     Style="{StaticResource NumberButton}"
                     Grid.Row="5"
@@ -195,11 +207,13 @@
             <Button Name="DecimalButton"
                     Grid.Row="5"
                     Grid.Column="2"
-                    Content="."/>
+                    Content="."
+                    Click="DecimalButton_Click"/>
             <Button Name="EqualsButton"
                     Grid.Row="5"
                     Grid.Column="3"
-                    Content="="/>
+                    Content="="
+                    Click="EqualsButton_Click"/>
         </Grid>
     </Grid>
 
