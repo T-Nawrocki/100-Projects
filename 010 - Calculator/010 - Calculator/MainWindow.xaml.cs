@@ -63,9 +63,16 @@ namespace _010___Calculator
             CleanUpInput(); // run cleanup input method
         }
 
-        private void IODisplay_Pasting(object sender, DataObjectPastingEventArgs e)
+        private void IODisplay_Pasting(object sender, DataObjectPastingEventArgs e) 
         {
             // restricts pasted input to valid characters only
+            string input = (String)e.DataObject.GetData(typeof(String)); // gets pasted data and assigns it to string
+
+            if (!_inputRegex.IsMatch(input)) // cancels paste if input doesn't match regex
+                e.CancelCommand();
+
+            if (input.Contains(".") && IODisplay.Text.Contains(".")) // cancels paste if pasted data would result in two decimal points
+                e.CancelCommand();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -74,9 +81,10 @@ namespace _010___Calculator
             // Might make sense to split this into separate handlers for each type of button (maybe one for numberbuttons, and one each for the others)
         }
 
-        // tidies up formatting of input by deleting redundant 0 and . characters and adding a 0 before initial .
+        
         private void CleanUpInput() 
         {
+            // tidies up formatting of input by deleting redundant 0 and . characters and adding a 0 before initial .
             string input = IODisplay.Text;
           
             if (input.Contains("."))
