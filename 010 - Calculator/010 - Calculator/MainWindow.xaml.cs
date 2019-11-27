@@ -89,17 +89,18 @@ namespace _010___Calculator
         #region Reset Button Event Handlers
         private void ClearInputButton_Click(object sender, RoutedEventArgs e)
         {
-
+            IODisplay.Text = "";
         }
 
         private void ClearAllButton_Click(object sender, RoutedEventArgs e)
         {
-
+            IODisplay.Text = "";
+            CurrentSumDisplay.Content = "";
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            IODisplay.Text = IODisplay.Text.Remove(IODisplay.Text.Length - 1);
         }
         #endregion
 
