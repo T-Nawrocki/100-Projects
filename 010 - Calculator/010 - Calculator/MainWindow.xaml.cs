@@ -106,12 +106,13 @@ namespace _010___Calculator
         #region Basic Maths Button Event Handlers
         private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
-
+            IODisplay.Text += (sender as Button).Content;
         }
 
         private void DecimalButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!IODisplay.Text.Contains("."))
+                IODisplay.Text += ".";
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
