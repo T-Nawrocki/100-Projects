@@ -124,7 +124,7 @@ namespace _010___Calculator
             {
                 if (CurrentSumDisplay.Content == null) // if there's no current sum, push input and "+" to current sum
                 {
-                    CurrentSumDisplay.Content += IODisplay.Text + " + ";
+                    CurrentSumDisplay.Content += IODisplay.Text + " " + (sender as Button).Content + " "; //USE THIS FOR ALL OF THEM SINGLE EVENT HANDLER YOU DID IT WOO
                     IODisplay.Text = ""; // resets input to empty string, ready for next input
                 }
             }
