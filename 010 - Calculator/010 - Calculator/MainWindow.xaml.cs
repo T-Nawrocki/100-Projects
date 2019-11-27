@@ -95,7 +95,7 @@ namespace _010___Calculator
         private void ClearAllButton_Click(object sender, RoutedEventArgs e)
         {
             IODisplay.Text = "";
-            CurrentSumDisplay.Content = "";
+            CurrentSumDisplay.Content = ""; // NEEDS TO BE SET BACK TO NULL, NOT EMPTY STRING
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
