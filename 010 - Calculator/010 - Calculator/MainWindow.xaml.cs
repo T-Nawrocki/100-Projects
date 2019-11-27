@@ -118,22 +118,66 @@ namespace _010___Calculator
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            CleanUpInput();
 
+            if (IODisplay.Text != "") // if there's no input, we don't want to do anything
+            {
+                if (CurrentSumDisplay.Content == null) // if there's no current sum, push input and "+" to current sum
+                {
+                    CurrentSumDisplay.Content += IODisplay.Text + " + ";
+                    IODisplay.Text = ""; // resets input to empty string, ready for next input
+                }
+            }
+            else
+                throw new NotImplementedException(); // still have to do something about when the user presses + but there's already an active sum
         }
 
         private void SubtractButton_Click(object sender, RoutedEventArgs e)
         {
+            CleanUpInput();
 
+            if (IODisplay.Text != "") // if there's no input, we don't want to do anything
+            {
+                if (CurrentSumDisplay.Content == null) // if there's no current sum, push input and "-" to current sum
+                {
+                    CurrentSumDisplay.Content += IODisplay.Text + " - ";
+                    IODisplay.Text = ""; // resets input to empty string, ready for next input
+                }
+            }
+            else
+                throw new NotImplementedException(); // still have to do something about when the user presses + but there's already an active sum
         }
 
         private void MultiplyButton_Click(object sender, RoutedEventArgs e)
         {
+            CleanUpInput();
 
+            if (IODisplay.Text != "") // if there's no input, we don't want to do anything
+            {
+                if (CurrentSumDisplay.Content == null) // if there's no current sum, push input and "x" to current sum
+                {
+                    CurrentSumDisplay.Content += IODisplay.Text + " \u00D7 ";
+                    IODisplay.Text = ""; // resets input to empty string, ready for next input
+                }
+            }
+            else
+                throw new NotImplementedException(); // still have to do something about when the user presses x but there's already an active sum
         }
 
         private void DivideButton_Click(object sender, RoutedEventArgs e)
         {
+            CleanUpInput();
 
+            if (IODisplay.Text != "") // if there's no input, we don't want to do anything
+            {
+                if (CurrentSumDisplay.Content == null) // if there's no current sum, push input and "x" to current sum
+                {
+                    CurrentSumDisplay.Content += IODisplay.Text + " \u00F7 ";
+                    IODisplay.Text = ""; // resets input to empty string, ready for next input
+                }
+            }
+            else
+                throw new NotImplementedException(); // still have to do something about when the user presses x but there's already an active sum
         }
 
         private void EqualsButton_Click(object sender, RoutedEventArgs e)
